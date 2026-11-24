@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: tmdb-collection-first
+    runtime: node
+    plan: free
+    buildCommand: npm test
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: TMDB_API_KEY
+        sync: false
+      - key: TMDB_LANGUAGE
+        value: sk-SK
